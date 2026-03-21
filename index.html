@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Samosa Wala – Fresh Snacks & Sweets Daily</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon"><img src="images/logo.jpg" alt="The Samosa Wala Logo" style="width:45px; height:45px; object-fit:contain; border-radius:50%;" /></span>
+        <span class="logo-text">The Samosa Wala</span>
+      </div>
+
+      <!-- Cart Icon -->
+      <button class="sw-cart-btn" id="swCartBtn" title="View Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="sw-cart-count" id="swCartCount">0</span>
+      </button>
+
+      <!-- Hamburger for mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <!-- 
+    DEVELOPER NOTE:
+    Replace the background-image in style.css (.hero section) 
+    with your real shop photo. Look for the comment:
+    "Replace this background image with the real shop photo"
+  -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-badge">Est. Since 1900</p>
+      <h1 class="hero-title">The Samosa Wala</h1>
+      <p class="hero-sub">Fresh Samosa, Jalebi and Snacks Available Daily</p>
+      <p class="hero-tagline">Taste the tradition · Made with love · Served hot</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">View Menu</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll down</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ========== POPULAR ITEMS ========== -->
+  <section class="popular" id="popular">
+    <div class="section-header">
+      <span class="section-tag">Crowd Favourites</span>
+      <h2>Most Popular Items</h2>
+      <p>Loved by thousands of happy customers</p>
+    </div>
+
+    <div class="popular-grid">
+      <!-- 
+        DEVELOPER NOTE: Replace item images below.
+        Use real food photos in the src="" attribute.
+        Recommended size: 400x300px
+      -->
+
+      <!-- Item 1 -->
+      <div class="popular-card">
+        <div class="card-img-wrap">
+          <img src="images/samosa.jpeg" alt="Samosa" />
+          <span class="card-badge">Best Seller</span>
+        </div>
+        <div class="card-body">
+          <h3>Samosa</h3>
+          <p>Golden crispy pastry filled with spiced potatoes & peas</p>
+          <div class="card-footer">
+            <span class="price">₹10 / piece</span>
+            <div class="sw-card-btns">
+              <button class="sw-cart-add" data-product="Samosa" data-price="₹10 / piece" data-desc="Golden crispy pastry filled with spiced potatoes & peas" onclick="swAddToCart(this)">Add to Cart</button>
+              <button class="sw-order-btn" data-product="Samosa" data-price="₹10 / piece" data-desc="Golden crispy pastry filled with spiced potatoes & peas" onclick="swOrderNow(this)">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="popular-card">
+        <div class="card-img-wrap">
+          <img src="images/jalebi.jpeg" alt="Jalebi" />
+          <span class="card-badge">Sweet Pick</span>
+        </div>
+        <div class="card-body">
+          <h3>Jalebi</h3>
+          <p>Freshly fried spiral sweets soaked in sugary syrup</p>
+          <div class="card-footer">
+            <span class="price">₹20 / 100g</span>
+            <div class="sw-card-btns">
+              <button class="sw-cart-add" data-product="Jalebi" data-price="₹20 / 100g" data-desc="Freshly fried spiral sweets soaked in sugary syrup" onclick="swAddToCart(this)">Add to Cart</button>
+              <button class="sw-order-btn" data-product="Jalebi" data-price="₹20 / 100g" data-desc="Freshly fried spiral sweets soaked in sugary syrup" onclick="swOrderNow(this)">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Item 3 -->
+      <div class="popular-card">
+        <div class="card-img-wrap">
+          <img src="images/poha.jpg" alt="poha" />
+          <span class="card-badge">best breakfast</span>
+        </div>
+        <div class="card-body">
+          <h3>Poha</h3>
+          <p>Soft and fluffy flattened rice tempered with mild spices and fresh herbs</p>
+          <div class="card-footer">
+            <span class="price">₹20/ plate</span>
+            <div class="sw-card-btns">
+              <button class="sw-cart-add" data-product="Poha" data-price="₹20/ plate" data-desc="Soft and fluffy flattened rice tempered with mild spices" onclick="swAddToCart(this)">Add to Cart</button>
+              <button class="sw-order-btn" data-product="Poha" data-price="₹20/ plate" data-desc="Soft and fluffy flattened rice tempered with mild spices" onclick="swOrderNow(this)">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Item 4 -->
+      <div class="popular-card">
+        <div class="card-img-wrap">
+          <img src="images/aloowada.jpg" alt="aloowada" />
+          <span class="card-badge">Tasty</span>
+        </div>
+        <div class="card-body">
+          <h3>Aloo wada</h3>
+          <p>Golden, deep-fried besan fritters stuffed with a flavorful mashed potato filling.</p>
+          <div class="card-footer">
+            <span class="price">₹10 / piece</span>
+            <div class="sw-card-btns">
+              <button class="sw-cart-add" data-product="Aloo wada" data-price="₹10 / piece" data-desc="Golden deep-fried besan fritters with potato filling" onclick="swAddToCart(this)">Add to Cart</button>
+              <button class="sw-order-btn" data-product="Aloo wada" data-price="₹10 / piece" data-desc="Golden deep-fried besan fritters with potato filling" onclick="swOrderNow(this)">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="popular-card">
+        <div class="card-img-wrap">
+          <img src="images/longlata.jpg" alt="Longlata" />
+          <span class="card-badge">Local Fav</span>
+        </div>
+        <div class="card-body">
+          <h3>Longlata</h3>
+          <p>Traditional elongated snack with flavorful masala filling</p>
+          <div class="card-footer">
+            <span class="price">₹15 / piece</span>
+            <div class="sw-card-btns">
+              <button class="sw-cart-add" data-product="Longlata" data-price="₹15 / piece" data-desc="Traditional elongated snack with flavorful masala filling" onclick="swAddToCart(this)">Add to Cart</button>
+              <button class="sw-order-btn" data-product="Longlata" data-price="₹15 / piece" data-desc="Traditional elongated snack with flavorful masala filling" onclick="swOrderNow(this)">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="popular-card">
+        <div class="card-img-wrap">
+          <img src="images/colddrinks.jpg" alt="Cold Drinks" />
+          <span class="card-badge">Refreshing</span>
+        </div>
+        <div class="card-body">
+          <h3>Cold Drinks</h3>
+          <p>Chilled beverages to cool you down after every bite</p>
+          <div class="card-footer">
+            <span class="price">₹50 onwards</span>
+            <div class="sw-card-btns">
+              <button class="sw-cart-add" data-product="Cold Drinks" data-price="₹50 onwards" data-desc="Chilled beverages to cool you down after every bite" onclick="swAddToCart(this)">Add to Cart</button>
+              <button class="sw-order-btn" data-product="Cold Drinks" data-price="₹50 onwards" data-desc="Chilled beverages to cool you down after every bite" onclick="swOrderNow(this)">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== MENU SECTION ========== -->
+  <!--
+    DEVELOPER NOTE:
+    To add/edit menu items, find the relevant category below
+    and duplicate or modify the <div class="menu-item"> block.
+    Update the name, price, and icon as needed.
+  -->
+  <section class="menu-section" id="menu">
+    <div class="section-header light">
+      <span class="section-tag">What We Serve</span>
+      <h2>Our Full Menu</h2>
+      <p>Something for everyone, every time</p>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" data-tab="snacks">🥟 Snacks</button>
+      <button class="tab-btn" data-tab="sweets">🍯 Sweets</button>
+      <button class="tab-btn" data-tab="drinks">🥤 Drinks</button>
+    </div>
+
+    <!-- Snacks -->
+    <div class="tab-content active" id="tab-snacks">
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-icon">🥟</div>
+          <div class="menu-info">
+            <h4>Samosa</h4>
+            <p>Crispy pastry with spiced potato filling</p>
+          </div>
+          <span class="menu-price">₹10</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">🫓</div>
+          <div class="menu-info">
+            <h4>Aloo wada</h4>
+            <p>Deep-fried besan fritters stuffed with a potato filling.</p>
+          </div>
+          <span class="menu-price">₹15</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">🌯</div>
+          <div class="menu-info">
+            <h4>Longlata</h4>
+            <p>Traditional long snack with masala filling</p>
+          </div>
+          <span class="menu-price">₹15</span>
+        </div>
+               <div class="menu-item">
+          <div class="menu-icon">🥙</div>
+          <div class="menu-info">
+     <h4>Poha</h4>
+            <p>Soft and fluffy flattened rice tempered with mild spices </p>
+          </div>
+          <span class="menu-price">₹20</span>
+        </div>
+       </div>
+    </div>
+
+    <!-- Sweets -->
+    <div class="tab-content" id="tab-sweets">
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-icon">🌀</div>
+          <div class="menu-info">
+            <h4>Jalebi</h4>
+            <p>Spiral sweets in sugar syrup, served hot</p>
+          </div>
+          <span class="menu-price">₹200/kg</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-icon">🍡</div>
+          <div class="menu-info">
+            <h4>Laddu</h4>
+            <p>Traditional sweet balls made with gram flour, ghee, and nuts.</p>
+          </div>
+          <span class="menu-price">₹200/ kg</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drinks -->
+    <div class="tab-content" id="tab-drinks">
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-icon">🥤</div>
+          <div class="menu-info">
+            <h4>Cold Drinks</h4>
+            <p>Chilled soft drinks & sodas</p>
+          </div>
+          <span class="menu-price">₹30+</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== OFFERS SECTION ========== -->
+  <!--
+    DEVELOPER NOTE:
+    To add new offers, open script.js and find the `offers` array.
+    Simply add a new object like:
+    { title: "Offer Title", description: "Details here", icon: "🎉" }
+    The offer cards will automatically render on the page.
+  -->
+  <section class="offers-section" id="offers">
+    <div class="section-header">
+      <span class="section-tag">Today's Specials</span>
+      <h2>Hot Offers 🔥</h2>
+      <p>Limited time deals — grab them while they last!</p>
+    </div>
+    <div class="offers-grid" id="offersGrid">
+      <!-- Offers injected by script.js -->
+    </div>
+  </section>
+
+  <!-- ========== GALLERY SECTION ========== -->
+  <!--
+    DEVELOPER NOTE:
+    Replace the image src="" values below with real shop/food photos.
+    Recommended size: 500x400px. You can add more <div class="gallery-item"> blocks.
+  -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-header light">
+      <span class="section-tag">Our Food</span>
+      <h2>Gallery</h2>
+      <p>A peek into our kitchen and snacks</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall">
+        <img src="images/samosa.jpg" alt="Samosa" />
+        <div class="gallery-overlay"><span>Samosa</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/shop1.jpg" alt="Shop Interior" />
+        <div class="gallery-overlay"><span>Our Shop</span></div>
+      </div>
+      <div class="gallery-item wide">
+        <img src="images/prep.jpg" alt="Food Preparation" />
+        <div class="gallery-overlay"><span>Fresh Preparation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <!--
+    DEVELOPER NOTE:
+    Update shop story, years of experience and stats below.
+  -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/shop.jpg" alt="Our Shop" />
+        <div class="about-badge">
+          <span class="years">10+</span>
+          <span>Years of<br/>Flavour</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Our Story</span>
+        <h2>Taste the Tradition</h2>
+        <p>This local shop has been serving fresh snacks and sweets for many years. We focus on taste, hygiene and affordable prices — because we believe everyone deserves delicious food.</p>
+        <p>Every samosa is handcrafted, every jalebi is fried fresh. Our secret? Old family recipes and a love for feeding people well.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">5k+</span>
+            <span class="stat-label">Happy Customers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Fresh Daily</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <!--
+    DEVELOPER NOTE:
+    Update address, phone number, WhatsApp number, and opening hours below.
+    For the Google Map, replace the src URL in the <iframe> with your shop's embed link.
+    To get embed link: Google Maps → Share → Embed a map → Copy HTML
+  -->
+  <section class="contact-section" id="contact">
+    <div class="section-header light">
+      <span class="section-tag">Find Us</span>
+      <h2>Get In Touch</h2>
+      <p>We'd love to hear from you</p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-card">
+          <i class="fa fa-map-marker-alt"></i>
+          <div>
+            <h4>Address</h4>
+            <!-- DEVELOPER NOTE: Update your shop address below -->
+            <p>Pateri, Satna, Madhya Pradesh 485001</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fa fa-phone-alt"></i>
+          <div>
+            <h4>Phone</h4>
+            <!-- DEVELOPER NOTE: Update your phone number below -->
+            <p><a href="tel:+919999999999">+91 8770993147</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fa fa-clock"></i>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>Monday – Sunday<br/>6:00 AM – 8:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <h4>WhatsApp Us</h4>
+            <!-- DEVELOPER NOTE: Update WhatsApp number in the href (replace 919999999999) -->
+            <a href="https://wa.me/918770993147" target="_blank" class="btn btn-whatsapp">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <!--
+          DEVELOPER NOTE:
+          Replace this iframe src with your real Google Maps embed link.
+          Steps: Google Maps → your shop → Share → Embed a map → Copy the src URL
+        -->
+        <iframe
+  src="https://maps.google.com/maps?q=THE+SAMOSA+WALA,+Pateri,+Satna,+Madhya+Pradesh+485001&output=embed&z=16"
+  width="100%"
+  height="350"
+  style="border:0; border-radius:16px;"
+  allowfullscreen=""
+  loading="lazy"
+title="Shop Location">
+</iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon"><img src="images/logo.jpg" alt="The Samosa Wala Logo" style="width:40px; height:40px; object-fit:contain; border-radius:50%;" /></span>
+        <span class="logo-text">The Samosa Wala</span>
+        <p>Fresh snacks, sweet treats and cold drinks served daily with love.</p>
+        <div class="social-links">
+          <!-- DEVELOPER NOTE: Update your social media links below -->
+          <a href="https://www.facebook.com/106441545677694/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/thesamosawala_?" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/918770993147" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtube.com/@thesamosawala?si=-llrkujpHLJiQdIJ" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+</div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <!-- DEVELOPER NOTE: Update contact details -->
+        <p><i class="fa fa-map-marker-alt"></i> Pateri, Satna, Madhya Pradesh 485001</p>
+        <p><i class="fa fa-phone-alt"></i> +91 8770993147</p>
+        <p><i class="fa fa-clock"></i> 6 AM – 8 PM, Mon–Sun</p>
+      <p><i class="fa fa-envelope"></i>thesamosawala12@gmail.com</p>
+</div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 The Samosa Wala. All rights reserved. | Made with ❤️ for snack lovers</p>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+  <!--
+    DEVELOPER NOTE: Update WhatsApp number in the href (replace 919999999999 with your number)
+  -->
+  <a href="https://wa.me/918770993147" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- CART DRAWER -->
+  <div id="sw-cart-backdrop"></div>
+  <div id="sw-cart-drawer">
+    <div class="sw-cart-header">
+      <div class="sw-cart-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Your Cart
+      </div>
+      <button class="sw-cart-close" id="swCartCloseBtn">&times;</button>
+    </div>
+    <div class="sw-cart-items" id="swCartItems">
+      <div class="sw-cart-empty">Cart is empty!<br><small>Add items to get started</small></div>
+    </div>
+    <div class="sw-cart-footer" id="swCartFooter" style="display:none">
+      <div class="sw-total-row">
+        <span>Total</span>
+        <span class="sw-total-price" id="swCartTotal">&#8377;0</span>
+      </div>
+      <!-- Delivery Details Form -->
+<div class="sw-delivery-form">
+  <div class="sw-delivery-title">
+    <i class="fa fa-map-marker-alt"></i> Delivery Details
+  </div>
+  <input type="text" id="swDeliveryName" class="sw-delivery-input" placeholder="Your Name *" maxlength="60" />
+  <input type="tel" id="swDeliveryPhone" class="sw-delivery-input" placeholder="Phone Number *" maxlength="15" />
+  <textarea id="swDeliveryAddress" class="sw-delivery-input sw-delivery-textarea" rows="2" placeholder="Delivery Address *" maxlength="200"></textarea>
+</div>
+      <button class="sw-wa-order-btn" id="swWaOrderBtn">
+        <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
